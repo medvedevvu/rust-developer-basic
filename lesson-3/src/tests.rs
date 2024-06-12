@@ -1,5 +1,4 @@
 mod tests {
-    //use crate::{double_int32, double_int64,double_float32,double_float64};
     use crate::{*};
 
     #[test]
