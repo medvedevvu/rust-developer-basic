@@ -18,7 +18,7 @@ mod tests {
 
     #[test]
     fn double_int64_overflowing_test() {
-        assert_eq!(double_int64(i32::MAX), (0i64, true), "ok")
+        assert_eq!(double_int64(2_000_000_000i32), (4_000_000_000i64, false), "ok")
     }
 
     #[test]

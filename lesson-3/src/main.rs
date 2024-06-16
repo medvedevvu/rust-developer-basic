@@ -14,7 +14,8 @@ fn double_int32(p: i32) -> (i32, bool) {
 }
 
 fn double_int64(p: i32) -> (i64, bool) {
-    let (a,b) = p.overflowing_mul(2);
+    let tmp:i64 = p as i64;
+    let (a,b) = tmp.overflowing_mul(2);
     if b {
         (0i64, true)
     } else {
