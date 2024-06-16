@@ -19,7 +19,7 @@ fn double_int64(p: i32) -> (i64, bool) {
     if b {
         (0i64, true)
     } else {
-        (a as i64 , false)
+        (a, false)
     }
 }
 
@@ -28,24 +28,19 @@ fn double_float32(p: f32) -> f32 {
 }
 
 fn double_float64(p: f32) -> f64 {
-    (p * 2.0) as f64
+    (p  as f64 ) * 2.0
 }
 
-fn int_plus_float_to_float(p1: i32, p2: f32) -> (f64, bool) {
-    let (a, b) = p1.overflowing_add(p2 as i32);
-    if b {
-        (0f64, true)
-    } else {
-        (a as f64 , false)
-    }
+fn int_plus_float_to_float(p1: i32, p2: f32) -> f64 {
+    (p1 as f64) + (p2 as f64)
 }
 
 fn int_plus_float_to_int(p1: i32, p2: f32) -> (i64, bool) {
-    let (a, b) = p1.overflowing_add(p2 as i32);
+    let (a, b) = (p1 as i64).overflowing_add(p2 as i64);
     if b {
         (0i64, true)
     } else {
-        (a as i64 , false)
+        (a , false)
     }
 }
 
